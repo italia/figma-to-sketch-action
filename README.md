@@ -7,8 +7,8 @@
 
 The following inputs briefly explained here are fully declared and documented in the [action.yaml](action.yaml):
 
-* `files` [**Required**] - Figma files to convert separated by `|` (default `*.fig*`)
-* `output_files` [**Required**] - Sketch files produced separated by `|` (default `*.sketch*`)
+* `files` [**Required**] - Figma files to convert separated by `|`.
+* `output_files` [**Required**] - Sketch files produced separated by `|`.
 
 ## Examples
 
@@ -24,8 +24,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: italia/figma-to-sketch-action@v1
       with:
-        files: "my_ui.fig"
-        output_files: "my_ui.sketch"
+        files: "my_ui.fig|my_best.fig"
+        output_files: "my_ui.sketch|my_best.sketch"
 ```
 
 ## Development

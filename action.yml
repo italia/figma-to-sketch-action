@@ -5,11 +5,9 @@ author: 'italia'
 inputs:
   files:
     description: 'Figma files to convert'
-    default: '*.fig'
     required: true
   output_files:
     description: 'Sketch files to produce'
-    default: '*.sketch'
     required: true
 
 runs:
