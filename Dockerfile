@@ -1,7 +1,10 @@
-FROM alpine:3.10
+FROM python:3-slim AS builder
 
-RUN apk --no-cache add git jq curl grep coreutils
+RUN pip install fig2sketch[fast]
+RUN pip install certifi
 
-COPY entrypoint.sh /entrypoint.sh
+COPY main.py /main.py
 
-ENTRYPOINT ["/entrypoint.sh"]
+FROM gcr.io/distroless/python3-debian10
+
+CMD ["python main.py"]

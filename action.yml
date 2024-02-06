@@ -1,21 +1,16 @@
-name: 'Action name'
-description: 'Action description'
+name: 'Figma to sketch conversion'
+description: 'Figma to sketch conversion'
 author: 'italia'
 
 inputs:
-  github_token:
-    description: 'GITHUB_TOKEN'
-    default: '${{ github.token }}'
-  repo:
-    description: 'GitHub repository. e.g. italia/publiccode-parser-action'
-    default: '${{ github.repository }}'
+  files:
+    description: 'Figma files to convert'
+    default: '*.fig'
     required: true
-
-outputs:
-  stars:
-    description: 'The stars of the repository'
-  license:
-    description: 'The license used in the repository'
+  output_files:
+    description: 'Sketch files to produce'
+    default: '*.sketch'
+    required: true
 
 runs:
   using: 'docker'

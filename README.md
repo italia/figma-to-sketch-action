@@ -1,26 +1,19 @@
-# GitHub Docker container action template
+# GitHub action to convert Figma files to Sketch ones
 
 [![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg?logo=slack)](https://developersitalia.slack.com/messages/CAM3F785T)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
-
-This is a template repository for [creating a GitHub Docker container action](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-a-docker-container-action).
-
-Click `Use this template` button to create your action based on this template.
-
-A sample action to get GitHub star counts and license from a given repository.
 
 ## Inputs
 
 The following inputs briefly explained here are fully declared and documented in the [action.yaml](action.yaml):
 
-* `repo` [**Required**] - GitHub repository to fetch (default `${{ github.repository }}`)
-
-* `github_token` [**Optional**] - GitHub token to interact with GitHub API (default `${{ github.token }}`)
+* `files` [**Required**] - Figma files to convert separated by `|` (default `*.fig*`)
+* `output_files` [**Required**] - Sketch files produced separated by `|` (default `*.sketch*`)
 
 ## Examples
 
 Include this action in your repo by creating 
-`.github/workflows/docker-action-template.yml`and edit where needed:
+`.github/workflows/fig2sketch.yml`and edit where needed:
 
 ```yml
 on: [push, pull_request]
@@ -31,9 +24,9 @@ jobs:
     name: Get Stars and License
     steps:
     - uses: actions/checkout@v2
-    - uses: italia/docker-action-template@v1
+    - uses: italia/figma-to-sketch-action@v1
       with:
-        repo: "italia/publiccode-parser-action"
+        files: "my_figma.fig"
 ```
 
 ## Contributing
@@ -51,7 +44,7 @@ This software is maintained by the
 
 ## License
 
-© 2021 Dipartimento per la Trasformazione Digitale - Presidenza del Consiglio dei
+© 2024 Dipartimento per la Trasformazione Digitale - Presidenza del Consiglio dei
 Ministri
 
 Licensed under the EUPL.
