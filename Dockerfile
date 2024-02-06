@@ -8,4 +8,4 @@ RUN pip install certifi
 
 COPY main.py /main.py
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "/main.py"]
