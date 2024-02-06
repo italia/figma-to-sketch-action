@@ -24,7 +24,7 @@ jobs:
     name: Convert Figma files to Sketch ones
     steps:
     - uses: actions/checkout@v2
-    - uses: italia/figma-to-sketch-action@v0.1.0
+    - uses: italia/figma-to-sketch-action@v0.1.2
       with:
         files: "my_ui.fig|my_best.fig"
         output_files: "my_ui.sketch|my_best.sketch"
