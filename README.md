@@ -16,17 +16,16 @@ Include this action in your repo by creating
 `.github/workflows/fig2sketch.yml`and edit where needed:
 
 ```yml
-on: [push, pull_request]
-
 jobs:
   examplejob:
     runs-on: ubuntu-latest
-    name: Get Stars and License
+    name: Convert Figma files to Sketch ones
     steps:
     - uses: actions/checkout@v2
     - uses: italia/figma-to-sketch-action@v1
       with:
-        files: "my_figma.fig"
+        files: "my_ui.fig"
+        output_files: "my_ui.sketch"
 ```
 
 ## Contributing
