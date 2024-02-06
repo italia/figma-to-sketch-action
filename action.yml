@@ -1,0 +1,26 @@
+name: 'Action name'
+description: 'Action description'
+author: 'italia'
+
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN'
+    default: '${{ github.token }}'
+  repo:
+    description: 'GitHub repository. e.g. italia/publiccode-parser-action'
+    default: '${{ github.repository }}'
+    required: true
+
+outputs:
+  stars:
+    description: 'The stars of the repository'
+  license:
+    description: 'The license used in the repository'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'activity'
+  color: 'white'
