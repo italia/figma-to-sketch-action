@@ -1,7 +1,9 @@
 # GitHub action to convert Figma files to Sketch ones
 
-[![Join the #publiccode channel](https://img.shields.io/badge/Slack%20channel-%23publiccode-blue.svg?logo=slack)](https://developersitalia.slack.com/messages/CAM3F785T)
+[![Join the #design-system channel](https://img.shields.io/badge/Slack%20channel-%23designers-blue.svg?logo=slack)](https://developersitalia.slack.com/messages/C7VPAUVB3)
 [![Get invited](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
+
+This action converts Figma files to Sketch ones using [fig2sketch utility](https://github.com/sketch-hq/fig2sketch).
 
 ## Inputs
 
@@ -22,7 +24,7 @@ jobs:
     name: Convert Figma files to Sketch ones
     steps:
     - uses: actions/checkout@v2
-    - uses: italia/figma-to-sketch-action@v1
+    - uses: italia/figma-to-sketch-action@v0.1.0
       with:
         files: "my_ui.fig|my_best.fig"
         output_files: "my_ui.sketch|my_best.sketch"
