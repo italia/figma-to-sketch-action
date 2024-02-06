@@ -28,6 +28,38 @@ jobs:
         output_files: "my_ui.sketch"
 ```
 
+## Development
+
+You can test this action creating a `test_files` folder, ann `.env` file
+
+```sh
+INPUT_FILES=./test_files/test-ui.fig
+INPUT_OUTPUT_FILES=./test_files/test-ui.sketch
+```
+
+and a `docker-compose.yml`
+
+```yml
+version: '3.3'
+
+services:
+  build:
+    image: italia/figma-to-sketch-action
+    container_name: figma2sketch-action
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./test_files:/test_files
+    networks:
+      - overlay
+
+networks:
+  overlay:
+```
+
 ## Contributing
 
 Contributing is always appreciated.
