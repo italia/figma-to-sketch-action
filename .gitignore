@@ -1,3 +1,4 @@
 /test_files
 .env
 docker-compose.yml
+.DS_Store
